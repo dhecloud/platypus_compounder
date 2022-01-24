@@ -1,7 +1,7 @@
 This repository helps you to compound $PTP from the liquidity pools on platypus.finance into a stablecoin of your choice. Please read the disclaimer before proceeding.
 
 # Disclaimer
-This repository was made so that i wouldn't have to manually compound my $ptp everyday. It's a learning experience for me too. This exposes your wallet's private key in the config file. Use this repository only if you understand what you are doing and at your own risk! I will not be responsible for any possible losses.
+This repository was made so that i wouldn't have to manually compound my $ptp everyday. It's a learning experience for me too. This exposes your wallet's private key in the config file. Use this repository only if you understand what you are doing and at your own risk! I will not be responsible for any potential losses.
 
 # What this repository does in specific terms
 1. Claims your vePTP if the option is turned on in `config.py`.
@@ -13,11 +13,11 @@ This repository assumes all tokens are all already approved. This repository doe
 
 
 # Prerequisite
-`python>3.8`
-`pip install web3`
+1. `python>3.8`   
+2. `pip install web3`
 
 # Setting Up
-1. git clone this repo
+1. `git clone git@github.com:dhecloud/platypus_compounder.git`
 2. `cd ptp_compounder`
 3. Modify/change the `config.py` parameters using your text editor
 4. After setting up, run `nohup python compound_ptp.py &` for the python script to run in the background.
