@@ -1,7 +1,7 @@
 This repository helps you to compound $PTP from the liquidity pools on platypus.finance into a stablecoin of your choice. Please read the disclaimer before proceeding.
 
 # Disclaimer
-This repository was made so that i wouldn't have to manually compound my $ptp everyday. It's a learning experience for me too. This exposes your wallet's private key in the config file. Use this repository only if you understand what you are doing and at your own risk! I will not be responsible for any potential losses.
+This repository was made so that i wouldn't have to manually compound my $ptp everyday. It's a learning experience for me too. This exposes your wallet's private key locally in the config file. Use this repository only if you understand what you are doing and at your own risk! I will not be responsible for any potential losses.
 
 # What this repository does in specific terms
 1. Claims your vePTP if the option is turned on in `config.py`.
@@ -9,10 +9,10 @@ This repository was made so that i wouldn't have to manually compound my $ptp ev
 3. Market sells all your claimed $PTP to the stablecoin defined in `config.py` via trader joe. There is no slippage used (as im not using an oracle).
 4. Then stakes available stable coins in your wallet into the pools. You can indicate which stablecoins to stake in `config.py`.
 
-This repository assumes all tokens are all already approved. This repository does NOT take care of token approvals. If you are unsure what how to go perform token approvals, simply just go through the whole staking process once for your stablecoins on platypus.finance.
+This repository assumes all tokens are all already approved. This repository does NOT take care of token approvals. If you are unsure how to perform token approvals, simply just go through the whole staking process once for your stablecoins on platypus.finance.
 
 
-# Prerequisite
+# Prerequisites
 1. `python>3.8`   
 2. `pip install web3`
 
@@ -34,5 +34,5 @@ This repository assumes all tokens are all already approved. This repository doe
 5. `TX_INTERVALS` - time (seconds) between each transaction. > 30 is best just in case avax is congested. default: 30
 6. `CLAIM_VEPTP`    - Claim $VEPTP before compounding?   1 if yes, 0 if no
 
-# Donations
-If this repository has helped you in any way, and if you would like to support me, you can send me any crypto on any EVM chain at `0xC986B1Aa3bFD11069e1e1bC67C712895Bc5DbC40` or sending me UST at `poohbear.ust`
+# Support me
+If this repository has helped you in any way, and if you would like to support me, you can send me any crypto (preferably stables) on any EVM chain at `0xC986B1Aa3bFD11069e1e1bC67C712895Bc5DbC40` or sending me UST at `poohbear.ust`
