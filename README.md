@@ -20,9 +20,7 @@ This repository assumes all tokens are all already approved. This repository doe
 1. `git clone git@github.com:dhecloud/platypus_compounder.git`
 2. `cd ptp_compounder`
 3. Modify/change the `config.py` parameters using your text editor
-4. After setting up, run `nohup python compound_ptp.py &` for the python script to run in the background.
-
-Alternatively, you can use `screen` instead of the `nohup`. Depends on your preference.
+4. After setting up, run `nohup python compound_ptp.py &` for the python script to run in the background. Alternatively, you can use `screen` instead of the `nohup`. Depends on your preference.
 
 ## Config parameters
 1. `ADDR`         - your wallet public address

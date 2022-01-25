@@ -4,7 +4,7 @@ from utils.avax_traderjoe_utils import swap_ptp
 import time
 import logging
 
-logging.basicConfig(filename='logs/ptp_compounder.log', encoding='utf-8', level=logging.INFO, force=True)
+logging.basicConfig(filename='logs/ptp_compounder.log', encoding='utf-8', level=logging.DEBUG, force=True)
 
 
 
@@ -19,7 +19,7 @@ def main():
         'mim': {'deposit':config.MIM, 'addr':'0x130966628846BFd36ff31a822705796e8cb8C18D', 'balance': 0, 'ptp_balance': 0, 'ptp_pool': '0000000000000000000000000000000000000000000000000000000000000003'},
         'intervals': config.TX_INTERVALS
     }
-
+    #
     if config.CLAIM_VEPTP == 1:
         claim_veptp(info)
         time.sleep(info['intervals'])

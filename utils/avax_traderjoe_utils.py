@@ -55,6 +55,7 @@ def swap_ptp_to_mim(addr, pkey):
     swap_ptp_to_destcoin(addr, pkey, dest_coin='0x130966628846BFd36ff31a822705796e8cb8C18D')
 
 def swap_ptp(info):
+    time.sleep(info['intervals'])
     if info['to'] == 'usdce':
         swap_ptp_to_usdce(info['sender_address'], info['private'])
     elif info['to'] == 'usdte':
@@ -65,3 +66,4 @@ def swap_ptp(info):
         swap_ptp_to_mim(info['sender_address'], info['private'])
     else:
         assert("please set TO in config to be either 'usdte', 'usdce', 'daie', or 'mim' ")
+    time.sleep(info['intervals'])

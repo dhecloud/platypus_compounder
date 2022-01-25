@@ -23,11 +23,14 @@ def check_available_stables_and_stake(info):
         if info[stable]['deposit']:
             if info[stable]['balance'] > 0:
                 logging.info(f"{time.ctime(time.time())}: Depositing {info[stable]['balance']} {stable}")
+                time.sleep(info['intervals'])
                 deposit_stable(info['sender_address'], info['private'], info[stable]['addr'], info[stable]['balance'])
                 time.sleep(info['intervals'])
+
             info = get_all_plp_balance(info)
             if info[stable]['ptp_balance'] > 0:
                 logging.info(f"{time.ctime(time.time())}: Staking {info[stable]['ptp_balance']} {stable}")
+                time.sleep(info['intervals'])
                 stake_plp(info['sender_address'], info['private'], info[stable]['ptp_pool'], info[stable]['ptp_balance'])
                 time.sleep(info['intervals'])
 
