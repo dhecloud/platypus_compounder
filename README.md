@@ -35,4 +35,4 @@ This repository assumes all tokens are all already approved. This repository doe
 6. `CLAIM_VEPTP`    - Claim $VEPTP before compounding?   1 if yes, 0 if no
 
 # Support me
-If this repository has helped you in any way, and if you would like to support me, you can send me any crypto (preferably stables) on any EVM chain at `0xC986B1Aa3bFD11069e1e1bC67C712895Bc5DbC40` or sending me UST at `poohbear.ust`
+If this repository has helped you in any way, and if you would like to support me, you can send me any crypto (preferably stables) on any EVM chain at `0xda929736e4b407F16d2FAB648c87fdF71bf15CA9` or sending me UST at `poohbear.ust`
