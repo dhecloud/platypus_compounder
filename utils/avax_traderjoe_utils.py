@@ -50,6 +50,9 @@ def swap_ptp_to_daie(addr, pkey):
     logging.info(f'{time.ctime(time.time())}: Swapping $PTP to $DAI.e')
     swap_ptp_to_destcoin(addr, pkey, dest_coin='0xd586E7F844cEa2F87f50152665BCbc2C279D8d70')
 
+def swap_ptp_to_usdc(addr, pkey):
+    logging.info(f'{time.ctime(time.time())}: Swapping $PTP to $usdc native')
+    swap_ptp_to_destcoin(addr, pkey, dest_coin='0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E')
 
 def swap_ptp(info):
     time.sleep(info['intervals'])
@@ -59,6 +62,8 @@ def swap_ptp(info):
         swap_ptp_to_usdte(info['sender_address'], info['private'])
     elif info['to'] == 'daie':
         swap_ptp_to_daie(info['sender_address'], info['private'])
+    elif info['to'] == 'usdc':
+        swap_ptp_to_usdc(info['sender_address'], info['private'])
     else:
-        assert("please set TO in config to be either 'usdte', 'usdce', or 'daie'")
+        assert("please set TO in config to be either 'usdte', 'usdce', 'daie', or 'usdc'")
     time.sleep(info['intervals'])

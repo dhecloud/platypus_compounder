@@ -19,7 +19,7 @@ platypus_proxy_contract = load_contract(w3=w3, address=w3.toChecksumAddress('0xB
 
 def check_available_stables_and_stake(info):
     info = get_all_stables_balance(info)
-    for stable in ['usdte', 'usdce', 'daie']:
+    for stable in ['usdte', 'usdce', 'daie', 'usdc']:
         if info[stable]['deposit']:
             if info[stable]['balance'] > 0:
                 logging.info(f"{time.ctime(time.time())}: Depositing {info[stable]['balance']} {stable}")
@@ -47,7 +47,7 @@ def claim_ptp_from_all_pools(info):
                 'chainId': 43114,
                 'to': '0xB0523f9F473812FB195Ee49BC7d2ab9873a98044',
                 'from': addr,
-                'data': '0x4ed73d2800000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000003000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000002',
+                'data': '0x4ed73d28000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000040000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000004',
                 'gas': 500000,
                 'gasPrice': w3.toWei(26,'gwei'),
                 'nonce': nonce,
@@ -88,8 +88,7 @@ stable_coin_abi = json.loads('[{"inputs":[],"stateMutability":"nonpayable","type
 usdce_coin_contract = load_contract(w3=w3, address=w3.toChecksumAddress('0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664'), abi=stable_coin_abi)
 usdte_coin_contract = load_contract(w3=w3, address=w3.toChecksumAddress('0xc7198437980c041c805A1EDcbA50c1Ce5db95118'), abi=stable_coin_abi)
 daie_coin_contract = load_contract(w3=w3, address=w3.toChecksumAddress('0xd586E7F844cEa2F87f50152665BCbc2C279D8d70'), abi=stable_coin_abi)
-
-
+usdc_coin_contract = load_contract(w3=w3, address=w3.toChecksumAddress('0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E'), abi=stable_coin_abi)
 
 
 
@@ -98,6 +97,7 @@ def get_all_stables_balance(info):
     info['usdce']['balance'] = usdce_coin_contract.functions.balanceOf(addr).call()
     info['usdte']['balance'] = usdte_coin_contract.functions.balanceOf(addr).call()
     info['daie']['balance'] = daie_coin_contract.functions.balanceOf(addr).call()
+    info['usdc']['balance'] = usdc_coin_contract.functions.balanceOf(addr).call()
 
     return info
 
@@ -145,6 +145,7 @@ plp_abi = json.loads('[{"inputs":[],"stateMutability":"nonpayable","type":"const
 usdte_plp_contract = load_contract(w3=w3, address=w3.toChecksumAddress('0x0D26D103c91F63052Fbca88aAF01d5304Ae40015'), abi=plp_abi)
 usdce_plp_contract = load_contract(w3=w3, address=w3.toChecksumAddress('0x909B0ce4FaC1A0dCa78F8Ca7430bBAfeEcA12871'), abi=plp_abi)
 daie_plp_contract = load_contract(w3=w3, address=w3.toChecksumAddress('0xc1Daa16E6979C2D1229cB1fd0823491eA44555Be'), abi=plp_abi)
+usdc_plp_contract = load_contract(w3=w3, address=w3.toChecksumAddress('0xAEf735B1E7EcfAf8209ea46610585817Dc0a2E16'), abi=plp_abi)
 
 
 def get_all_plp_balance(info):
@@ -152,6 +153,7 @@ def get_all_plp_balance(info):
     info['usdce']['ptp_balance'] = usdce_plp_contract.functions.balanceOf(addr).call()
     info['usdte']['ptp_balance'] = usdte_plp_contract.functions.balanceOf(addr).call()
     info['daie']['ptp_balance'] = daie_plp_contract.functions.balanceOf(addr).call()
+    info['usdc']['ptp_balance'] = usdc_plp_contract.functions.balanceOf(addr).call()
 
     return info
 

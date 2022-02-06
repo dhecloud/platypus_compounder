@@ -16,6 +16,7 @@ def main():
         'usdte': {'deposit':config.USDT, 'addr':'0xc7198437980c041c805A1EDcbA50c1Ce5db95118', 'balance': 0, 'ptp_balance': 0, 'ptp_pool': '0000000000000000000000000000000000000000000000000000000000000000'},
         'usdce': {'deposit':config.USDC, 'addr':'0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664', 'balance': 0, 'ptp_balance': 0, 'ptp_pool': '0000000000000000000000000000000000000000000000000000000000000001'},
         'daie': {'deposit':config.DAI, 'addr':'0xd586E7F844cEa2F87f50152665BCbc2C279D8d70', 'balance': 0, 'ptp_balance': 0, 'ptp_pool': '0000000000000000000000000000000000000000000000000000000000000002'},
+        'usdc': {'deposit':config.DAI, 'addr':'0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E', 'balance': 0, 'ptp_balance': 0, 'ptp_pool': '0000000000000000000000000000000000000000000000000000000000000004'},
         'intervals': config.TX_INTERVALS
     }
     #

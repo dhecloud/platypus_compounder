@@ -6,6 +6,7 @@ PRIVATE_KEY= ''
 USDT = 1
 USDC = 1
 DAI = 1
+USDC = 1
 
 '''compound to'''       # all claimed ptp will be compounded to this coin.
 TO = 'usdte'            # options: 'usdte', 'usdce', 'daie', 'mim'
