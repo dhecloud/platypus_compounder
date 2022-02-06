@@ -21,14 +21,14 @@ def main():
     }
     #
     while 1:
-    if config.CLAIM_VEPTP == 1:
-        claim_veptp(info)
-        time.sleep(info['intervals'])
+        if config.CLAIM_VEPTP == 1:
+            claim_veptp(info)
+            time.sleep(info['intervals'])
 
-    claim_ptp_from_all_pools(info)
-    swap_ptp(info)
-    check_available_stables_and_stake(info)
-    time.sleep(config.COMPOUND_FREQ)
+        claim_ptp_from_all_pools(info)
+        swap_ptp(info)
+        check_available_stables_and_stake(info)
+        time.sleep(config.COMPOUND_FREQ)
 
 if __name__ == '__main__':
     main()
